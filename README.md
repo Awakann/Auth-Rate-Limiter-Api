@@ -72,7 +72,7 @@ Designed to demonstrate full-stack backend skills with Node.js, Express, MongoDB
 
 💻 Demo Admin : | Email: demo@recruit.com  | Password: DemoPass123
 
-👩‍💻 Admin :  | Email: shyny@gmail.com  | Password: shyny1
+👩‍💻 Admin :  | Email: shyny1@gmail.com  | Password: shyny1
 
 👱 User : | Email: coral@gmail.com   | Password: coral1
 
@@ -101,7 +101,6 @@ git clone https://github.com/Awakann/Auth-Rate-Limiter-Api.git
 cd auth-rate-limiter-api
 npm install
 cp .env.example .env
-# Add your MongoDB URI and secret keys
 npm start
 
 
