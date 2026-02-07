@@ -1,0 +1,53 @@
+<h2>Admin Dashboard</h2>
+
+{{#if isDemoAdmin}}
+  <div class="alert alert-warning text-center">
+    <strong>Recruiter Demo Mode</strong><br>
+    You are logged in with <b>read-only</b> access.
+    Editing and deleting users is disabled.
+  </div>
+{{/if}}
+
+
+
+<p>Logged in as: {{user.name}} ({{user.role}})</p>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Role</th>
+      {{#if isAdmin}}
+        <th>Actions</th>
+      {{/if}}
+    </tr>
+  </thead>
+
+  <tbody>
+    {{#each users}}
+      <tr>
+        <td>{{this.name}}</td>
+        <td>{{this.email}}</td>
+        <td>{{this.role}}</td>
+
+        {{#if ../isAdmin}}
+        <td>
+          <form action="/admin/update-role/{{this._id}}" method="POST" style="display:inline;">
+            <select name="role">
+              <option value="user">User</option>
+              <option value="admin">Admin</option>
+              <option value="demoAdmin">Demo Admin</option>
+            </select>
+            <button class="btn btn-sm btn-primary">Update</button>
+          </form>
+
+          <form action="/admin/delete/{{this._id}}" method="POST" style="display:inline;">
+            <button class="btn btn-sm btn-danger">Delete</button>
+          </form>
+        </td>
+        {{/if}}
+      </tr>
+    {{/each}}
+  </tbody>
+</table>

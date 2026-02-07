@@ -1,0 +1,25 @@
+<h2>Audit Logs</h2>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Action</th>
+      <th>Performed By</th>
+      <th>Target User</th>
+      <th>IP</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    {{#each logs}}
+      <tr>
+        <td>{{this.action}}</td>
+        <td>{{this.performedBy.name}}</td>
+        <td>{{#if this.targetUser}}{{this.targetUser.name}}{{else}}—{{/if}}</td>
+        <td>{{this.ipAddress}}</td>
+        <td>{{this.createdAt}}</td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>

@@ -1,0 +1,12 @@
+
+<h2> Dashboard </h2>
+
+{{#if user}}
+<p> Welcome {{user.name}}! Your role is {{user.role}} </p>
+
+<p> <a href="/api/auth/logout" class="btn btn-danger"> Logout </a> </p>
+ 
+ {{else}}
+    <p> You are not Logged in. </p>
+ {{/if}}
+
